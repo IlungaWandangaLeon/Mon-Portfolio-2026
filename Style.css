@@ -1,0 +1,753 @@
+:root{
+    --violet-doux: #6C63FF;
+    --violet-fonce: #534EDD;
+    --orange-vif: #FFA726;
+    --gris-tres-fonce: #333;
+    --gris-tres-clair: #F8F8FB;
+    --gris-clair: #EEE;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--gris-tres-clair);
+    font-family: Roboto, sans serif;
+    line-height: 1,6;
+}
+header{
+    background-color: white;
+    box-shadow: 2px 6px 10px rgba(0, 0, 0, 0,05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+
+}
+header div a {
+    text-decoration: none;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--violet-doux);
+}
+ul li {
+    list-style: none;
+    margin-left: 15px;
+}
+ul {
+    display: flex;
+}
+ul li a {
+    text-decoration: none;
+    color: var(--gris-tres-fonce);
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 8px 0;
+}
+ul li a:hover {
+    color: var(--violet-doux);
+}
+
+ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0%;
+    background-color: var(--violet-doux);
+    transition: width 0.3s ease;
+}
+ul li a:hover::after {
+    width: 100%;
+}
+a.active::after {
+    width: 100%;
+}
+section.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    text-align: center;
+}
+.hero img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 10px solid var(--violet-doux);
+
+}
+.hero h1{
+     color: var(--violet-doux);
+     font-size: 4rem;
+     font-weight: 700;
+     margin-bottom: 1.7rem;
+}
+.hero p {
+    color: var(--gris-tres-fonce);
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+}
+.hero a {
+    text-decoration: none;
+    display: inline-block;
+    background-color: var(--violet-doux);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, Transform 0.2s ease;
+}
+.hero a:hover {
+    background-color: var(--violet-fonce);
+    transform: translate(-3px);
+}
+.apropos {
+    width: 800px;
+    margin: 6rem auto;
+    text-align: center;
+}
+section h2 {
+    color: var(--violet-doux);
+    font-size: 2.6rem;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 60px;
+    background-color: var(--violet-doux);
+    margin: 1.2rem auto;
+    border-radius: 2px;
+}
+
+section p {
+    margin-bottom: 2rem;
+    color: var(--gris-tres-fonce);
+    font-size: 1rem;
+}
+
+.competences table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #FFF;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.competences table th, .competences table td {
+    padding: 15px;
+}
+
+.competences table thead {
+    background-color: var(--violet-doux);
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+/* ajouter une bordure de 1px en bas de chaque celmume */
+.competences table tbody td {
+    border-bottom: 1px solid var(--gris-clair);
+}
+
+.competences table tbody tr{
+    background-color: #fdfdfd;
+}
+
+.competences table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.competences table tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+.competences table thead th {
+    text-align: left;
+}
+
+footer {
+    margin-top: 3rem;
+    background-color: var(--violet-doux);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+footer p {
+    color: white;
+    margin-bottom: 1.2rem;
+}
+
+footer a {
+    display: inline-block;
+    font-size: 1.6rem;
+    color: white;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.2s ease;
+
+}
+
+footer a:hover {
+    color: var(--orange-vif);
+    transform: translateY(-3px);
+}
+
+/* --- Styles pour la page Contact --- */
+
+.contact-container {
+    max-width: 1000px;
+    margin: 4rem auto;
+    display: flex;
+    gap: 4rem;
+    padding: 0 2rem;
+    align-items: flex-start;
+}
+
+.contact-info {
+    flex: 1;
+    text-align: left;
+}
+
+.contact-info h2 {
+    text-align: left;
+}
+
+.contact-info h2::after {
+    margin: 1.2rem 0; /* Aligne la barre à gauche */
+}
+
+.info-details {
+    margin-top: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--gris-tres-fonce);
+}
+
+.info-item i {
+    color: var(--violet-doux);
+    font-size: 1.4rem;
+}
+
+.social-apps {
+    display: flex;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.social-apps a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.social-apps a[title="WhatsApp"] { background-color: #25D366; }
+.social-apps a[title="Telegram"] { background-color: #0088cc; }
+
+.social-apps a:hover {
+    opacity: 0.8;
+}
+
+/* Formulaire */
+.contact-form {
+    flex: 1;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--gris-tres-fonce);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--gris-clair);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--violet-doux);
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--violet-doux);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--violet-fonce);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+/* --- Styles pour la page Projets --- */
+
+.projets-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.projet-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.projet-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(108, 99, 255, 0.15);
+}
+
+.projet-image {
+    height: 200px;
+    width: 100%;
+}
+
+.projet-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.projet-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.projet-content h3 {
+    color: var(--violet-doux);
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.projet-content p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.tags span {
+    background-color: #F0EFFF;
+    color: var(--violet-doux);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.projet-links {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gris-clair);
+}
+
+.projet-links a, .status {
+    text-decoration: none;
+    color: var(--gris-tres-fonce);
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+}
+
+.projet-links a:hover {
+    color: var(--violet-doux);
+}
+
+.status {
+    color: #999;
+}
+/* --- Styles pour la page Divertissement --- */
+
+.divertissement-section {
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro-text {
+    margin-bottom: 3rem;
+    color: var(--gris-clair);
+    font-size: 1.1rem;
+}
+
+.divertissement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Modification profonde de .div-card pour gérer l'arrière-plan */
+.div-card {
+    position: relative; /* Nécessaire pour l'overlay et le contenu absolu */
+    height: 350px; /* Hauteur fixe pour que les images soient bien visibles */
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Pour que l'overlay et l'effet de zoom restent dans la carte */
+    background-size: cover; /* L'image couvre toute la carte */
+    background-position: center; /* L'image est centrée */
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end; /* Texte en bas de la carte */
+    text-align: left; /* Texte aligné à gauche */
+    border: none; /* Plus besoin de bordure violette au survol */
+}
+
+/* Effet de zoom sur l'image de fond au survol */
+.div-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    /* L'effet de zoom est géré par la transition sur background-size n'est pas possible directement */
+    /* On va ruser avec un pseudo-élément si tu veux vraiment un zoom, mais commençons simple. */
+}
+
+/* L'overlay (voile sombre) pour la lisibilité */
+.div-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+    z-index: 1; /* Derrière le contenu */
+    transition: background 0.3s ease;
+}
+
+.div-card:hover .div-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%);
+}
+
+/* Le conteneur du texte */
+.div-content {
+    position: relative;
+    z-index: 2; /* Devant l'overlay */
+    padding: 1.5rem;
+    color: white; /* Texte en blanc pour le contraste */
+}
+
+.div-icon {
+    font-size: 2.5rem;
+    color: var(--violet-doux); /* Ton violet reste la couleur de l'icône */
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.div-card:hover .div-icon {
+    transform: scale(1.1) translateY(-5px); /* Petit effet de survol de l'icône */
+}
+
+.div-card h3 {
+    color: white; /* Titre en blanc */
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.div-card p {
+    color: #eee; /* Texte descriptif en gris très clair */
+    line-height: 1.5;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* Ajustement Responsive */
+@media (min-width: 992px) {
+    .divertissement-grid .div-card:last-child:nth-child(3n-1) {
+        grid-column: span 1;
+    }
+}
+/* =========================================
+   NOUVELLE PAGE PASSIONS - DESIGN EMBELLI
+   ========================================= */
+
+/* --- 1. Arrière-plan de la page --- */
+.passions-main {
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); /* Dégradé subtil */
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 5rem;
+}
+
+/* Ajout de formes géométriques décoratives en fond */
+.passions-main::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(108, 99, 255, 0.05); /* Violet très transparent */
+    border-radius: 50%;
+    top: -100px;
+    right: -100px;
+}
+
+.passions-main::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 167, 38, 0.05); /* Orange très transparent */
+    border-radius: 50%;
+    bottom: -50px;
+    left: -50px;
+}
+
+/* --- 2. Structure Hero & Intro --- */
+.passions-hero {
+    padding: 6rem 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.passions-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.passions-intro {
+    text-align: center;
+    margin-bottom: 6rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.passions-intro h2 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--gris-tres-fonce);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Surligneur violet sous "Passions" */
+.text-highlight {
+    color: var(--violet-doux);
+    position: relative;
+}
+
+.text-highlight::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    background: rgba(108, 99, 255, 0.15);
+    bottom: 5px;
+    left: 0;
+    z-index: -1;
+    border-radius: 5px;
+}
+
+.passions-intro p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* --- 3. Grille des cartes --- */
+.passions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+}
+
+/* --- 4. Style des cartes (Le Cœur du Design) --- */
+.passion-card {
+    background: #FFFFFF;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); /* Transition fluide */
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+/* Effet de survol principal */
+.passion-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+/* --- 5. Style des Icônes --- */
+.card-icon-box {
+    width: 90px;
+    height: 90px;
+    background: var(--gris-tres-clair);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    font-size: 2.8rem;
+    transition: 0.4s ease;
+    border: 3px solid #FFF;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Couleurs spécifiques des icônes au repos */
+.card-web .card-icon-box i { color: var(--violet-doux); }
+.card-ia .card-icon-box i { color: var(--orange-vif); }
+.card-design .card-icon-box i { color: #0088cc; /* Un bleu design */ }
+
+/* Effet au survol sur l'icône */
+.passion-card:hover .card-icon-box {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* --- 6. Texte des cartes --- */
+.card-text h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--gris-tres-fonce);
+    margin-bottom: 1.2rem;
+}
+
+.card-text p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Couleurs spécifiques des titres au survol */
+.web-text { color: var(--violet-doux); }
+.ia-text { color: var(--orange-vif); }
+.design-text { color: #0088cc; }
+
+/* --- 7. EFFETS DE LUMIÈRE AU SURVOL (NÉON) --- */
+
+/* Carte Web Dev (Violet) */
+.card-web:hover {
+    border-color: var(--violet-doux);
+    box-shadow: 0 15px 40px rgba(108, 99, 255, 0.2);
+}
+.card-web:hover .card-icon-box {
+    background: var(--violet-doux);
+    color: white;
+}
+.card-web:hover .card-icon-box i { color: white; }
+
+/* Carte IA (Orange) */
+.card-ia:hover {
+    border-color: var(--orange-vif);
+    box-shadow: 0 15px 40px rgba(255, 167, 38, 0.2);
+}
+.card-ia:hover .card-icon-box {
+    background: var(--orange-vif);
+    color: white;
+}
+.card-ia:hover .card-icon-box i { color: white; }
+
+/* Carte Design (Bleu) */
+.card-design:hover {
+    border-color: #0088cc;
+    box-shadow: 0 15px 40px rgba(0, 136, 204, 0.2);
+}
+.card-design:hover .card-icon-box {
+    background: #0088cc;
+    color: white;
+}
+.card-design:hover .card-icon-box i { color: white; }
+
+/* --- 8. Responsive Mobile --- */
+@media (max-width: 768px) {
+    .passions-intro h2 {
+        font-size: 2.8rem;
+    }
+    .passion-card {
+        padding: 2rem;
+    }
+}
